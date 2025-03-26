@@ -1,10 +1,17 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿
+#region MS Directives
+using Microsoft.Extensions.Configuration;
+#endregion
+
+#region Third party Directives
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using Serilog;
+#endregion
 
-namespace QuickBase.TestAutomationLogicHub
+
+namespace QuickBase.TestAutomationCore
 {
     /// <summary>
     /// Utility class for QuickBase

@@ -2,13 +2,18 @@
 using Serilog;
 #endregion
 
-namespace QuickBase.TestAutomationLogicHub
+namespace QuickBase.TestAutomationCore
 {
     /// <summary>
     /// class to read json file
     /// </summary>
     public class JsonFileReader
     {
+        /// <summary>
+        /// Method to read json file
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public static string GetJsonFile(string filePath)
         {
             string json = string.Empty;

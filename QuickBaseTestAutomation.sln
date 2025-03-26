@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBase.TestAutomationSuite", "QuickBaseTestAutomation\QuickBase.TestAutomationSuite.csproj", "{BEA79ADD-0C8F-4E0F-AD56-9DEEDB23B6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBase.TestAutomationLogicHub", "QuickBase.TestAutomation.Core\QuickBase.TestAutomationLogicHub.csproj", "{487EC66D-FFF0-4EEE-BB33-472B9704254A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickBase.TestAutomationCore", "QuickBase.TestAutomation.Core\QuickBase.TestAutomationCore.csproj", "{598BF27C-5FAC-4262-8E07-FA38C62B2D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{BEA79ADD-0C8F-4E0F-AD56-9DEEDB23B6AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEA79ADD-0C8F-4E0F-AD56-9DEEDB23B6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEA79ADD-0C8F-4E0F-AD56-9DEEDB23B6AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{487EC66D-FFF0-4EEE-BB33-472B9704254A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{487EC66D-FFF0-4EEE-BB33-472B9704254A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{487EC66D-FFF0-4EEE-BB33-472B9704254A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{487EC66D-FFF0-4EEE-BB33-472B9704254A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{598BF27C-5FAC-4262-8E07-FA38C62B2D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{598BF27C-5FAC-4262-8E07-FA38C62B2D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{598BF27C-5FAC-4262-8E07-FA38C62B2D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{598BF27C-5FAC-4262-8E07-FA38C62B2D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

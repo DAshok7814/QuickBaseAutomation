@@ -1,8 +1,29 @@
 {
-    "Invalid_HttpMethod": 
-      {
-        "message": "Not Found",
-        "description": "Path not found"
-      }    
-  }
+  "Invalid_HttpMethod": {
+    "message": "Not Found",
+    "description": "Path not found"
+  },
+  "Required_Tokey_Missed": {
+    "message": "Bad Request",
+    "description": "Required key 'to' not found"
+  },
+  "Authorization_header_Missed": {
+    "message": "Bad Request",
+    "description": "Required header 'authorization' not found"
+  },
+  "Access_Denied": {
+    "message": "Access denied",
+    "description": "User token is invalid"
+  },
+  "Required_From_Missed": {
+    "message": "Bad Request",
+    "description": "Required key 'from' not found"
+  },
+  "Required_Datakey_Missed": {
+    "message": "Bad Request",
+    "description": "Required key 'data' not found"
+  },
+  "Forbidden_Error": "Please visit https://developer.quickbase.com for more information."
+
+}
 
