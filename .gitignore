@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/QuickBaseTestAutomation
+/QuickBase.TestAutomation.Core/bin/Debug/net8.0
+/QuickBase.TestAutomation.Core/obj
+/QuickBaseTestAutomation/bin/Debug/net8.0
+/QuickBaseTestAutomation/obj

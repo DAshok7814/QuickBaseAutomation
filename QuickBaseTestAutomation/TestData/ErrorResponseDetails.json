@@ -1,0 +1,8 @@
+{
+    "Invalid_HttpMethod": 
+      {
+        "message": "Not Found",
+        "description": "Path not found"
+      }    
+  }
+
