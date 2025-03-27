@@ -73,7 +73,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         }
 
         [Test]
-        public void TC_001_Successful_request_with_valid_user_tokenand_data()
+        public void TC_001_200_Successful_request_with_valid_user_tokenand_data()
         {
             try
             {
@@ -114,7 +114,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
 
         [Test]
         [Repeat(2)]
-        public void TC_002_Unauthorized_request_due_to_invalid_user_token()
+        public void TC_002_401_Unauthorized_request_due_to_invalid_user_token()
         {
             try
             {
@@ -135,7 +135,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
 
 
         [Test, Category("Sanity")]
-        public void TC_002_Unauthorized_request_due_to_missing_user_token()
+        public void TC_002_400_Unauthorized_request_due_to_missing_user_token()
         {
             try
             {
@@ -289,13 +289,66 @@ namespace QuickBase.TestAutomationSuite.TestCases
 
                 //Assert 
                 Assert.That(result?.StatusCode, Is.EqualTo(HttpStatusCode.MethodNotAllowed));
-            
+
             }
             catch (Exception ex)
             {
                 Log.Error("Error in TC_007_405_Method_NotAllowed");
                 Assert.Fail($"Unexpected exception occurred: {ex.Message}");
             }
-}
+        }
+
+        [TestCase("TestData\\TC_008_DataValidation_Data_CaseSesitive.json", "Required_Datakey_Missed")]
+        [TestCase("TestData\\TC_008_DataValidation_To_CaseSesitive.json", "Required_Tokey_Missed")]
+        [TestCase("TestData\\TC_008_DataValidation_Data_String.json", "Data_ShouldBeArray")]
+        public void TC_008_DataValidation(string path, string key)
+        {
+            try
+            {
+                // Arrange 
+                var data = JsonFileReader.GetJsonFile(path);
+
+                if (_headers != null && _configuration != null)
+                {
+                    JObject jObject = QBUtility.ReadJsonFileAndConvertJobject(Constants.ErrorResponseDetailsJson);
+
+                    client = new RestClientWrapper(_configuration);
+                    //Act
+                    var response = client?.PostAsync("", data, _headers).GetAwaiter().GetResult();
+                    string responseString = QBUtility.DeserializeObject(response);
+
+                    //Assert 
+                    Assert.That(response?.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
+                    Assert.That(responseString, Is.EqualTo(jObject?[key].ToString()));
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Error in TC_005_400_BadRequest");
+                Assert.Fail($"Unexpected exception occurred: {ex.Message}");
+            }
+        }
+
+        [Test]
+        [Repeat(2)]
+        public void TC_008_401_Unauthorized_WrongTableName()
+        {
+            try
+            {
+                //Arrange
+                var result = TestCaseUtility.Unauthorized_Request_DuetoInvalid_Usertoken(_headers, client, HttpMethod.Post, Constants.TC_008_401_Unauthorized_WrongTableName);
+
+                //Assert
+                Assert.That(result.Response?.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
+                Assert.That(result.ResponseString, Is.EqualTo(result.ErrorResponseDetailsJson?[Constants.Access_Denied]?.ToString()));
+
+            }
+            catch (Exception ex)
+            {
+                Log.Error("Error in TC_002_Unauthorized_request_due_to_invalid_user_token");
+                Assert.Fail($"Unexpected exception occurred: {ex.Message}");
+            }
+        }
     }
+
 }

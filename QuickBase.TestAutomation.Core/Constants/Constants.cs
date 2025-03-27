@@ -48,6 +48,11 @@
         /// <summary>
         /// DataForProjectTableJson
         /// </summary>
+        public static string TC_008_401_Unauthorized_WrongTableName = "TestData\\TC_008_401_Unauthorized_WrongTableName.json";
+
+        /// <summary>
+        /// DataForProjectTableJson
+        /// </summary>
         public static string TC_DataForProjectTable_Delete = "TestData\\TC_DataForProjectTable_Delete.json";
 
         

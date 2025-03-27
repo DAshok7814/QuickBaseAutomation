@@ -23,6 +23,10 @@
     "message": "Bad Request",
     "description": "Required key 'data' not found"
   },
+  "Data_ShouldBeArray": {
+    "message": "Bad Request",
+    "description": "'data' should be array"
+  },
   "Forbidden_Error": "Please visit https://developer.quickbase.com for more information."
 
 }

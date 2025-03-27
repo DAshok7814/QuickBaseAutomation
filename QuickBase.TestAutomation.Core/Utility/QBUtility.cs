@@ -107,5 +107,43 @@ namespace QuickBase.TestAutomationCore
                 return new JObject();
             }
         }
+
+        // <summary>
+        /// Method to ConvertStringToJobject
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static JObject ConvertStringToJobject(string jsonData)
+        {
+            try
+            {
+                return JObject.Parse(jsonData);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error While Converting JObject");
+                return new JObject();
+            }
+        }
+
+        // <summary>
+        /// Method to ConvertStringToJobject
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string ConvertJobjectToString(JObject jsonData)
+        {
+            try
+            {
+                return JsonConvert.SerializeObject(jsonData, Formatting.Indented);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Error While Converting JObject");
+                return string.Empty;
+            }
+        }
     }
 }

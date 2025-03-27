@@ -1,0 +1,10 @@
+{
+  "from": "buzef6nza",
+  "select": [
+    16,
+    27,
+    97
+  ],
+  "where": "{3.CT.'dynamicValue'}"
+
+}

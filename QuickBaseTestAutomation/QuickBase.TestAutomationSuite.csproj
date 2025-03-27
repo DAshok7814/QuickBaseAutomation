@@ -34,7 +34,25 @@
     <None Update="TestConfiguration\TestFrameworkSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestData\TC_001_Successful_request_with_valid_user_token_and_data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TC_001_200_UpdateRecordsToTable_QueryData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TC_001_200_UpdateRecordsToTable_QueryData_Response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\TC_001_Successful_Response.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TC_008_DataValidation_Data_CaseSesitive.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TC_008_DataValidation_To_CaseSesitive.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TC_008_DataValidation_Data_String.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="TestData\TC_005_400_BadRequest_Without_Required_FromKey_Delete.json">
@@ -55,6 +73,9 @@
     <None Update="TestData\TC_001_Successful_Request_DeleteRecord.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestData\TC_008_401_Unauthorized_WrongTableName.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\TC_DataForProjectTable_Delete.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -64,7 +85,7 @@
     <None Update="TestData\TC_001_Successful_request_with_valid_user_token_QueryData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_Successful_request_with_valid_user_token_and_data.json">
+    <None Update="TestData\TC_001_200_UpdateRecordsToTable.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="TestData\TC_003_404_NotFound_WrongURL.json">
