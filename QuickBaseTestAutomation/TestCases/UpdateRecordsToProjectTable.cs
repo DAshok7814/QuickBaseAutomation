@@ -80,7 +80,6 @@ namespace QuickBase.TestAutomationSuite.TestCases
                 //Arrange
                 var data = JsonFileReader.GetJsonFile("TestData\\UpdateRecords\\TC_001_Successful_request_with_valid_user_token_and_data.json");
 
-                JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\UpdateRecords\\TC_001_200_UpdateRecordsToTable_QueryData_Response.json");
 
                 if (_headers != null && _configuration != null)
                 {
@@ -127,6 +126,8 @@ namespace QuickBase.TestAutomationSuite.TestCases
                     JObject jObject = JObject.Parse(responseString);
 
                     var result = jObject?[Constants.ResponseData]?[0];
+
+                    JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\UpdateRecords\\TC_001_200_UpdateRecordsToTable_QueryData_Response.json");
                     //Assert
                     Assert.That(queryResponse?.StatusCode, Is.EqualTo(HttpStatusCode.OK));
                     Assert.That(result?[Constants.ProjectName_DbValue]?[Constants.Value]?.ToString(), Is.EqualTo(expectedObject?[Constants.Project_Name]?.ToString()));

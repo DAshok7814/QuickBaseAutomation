@@ -1,14 +1,13 @@
-# QuickBaseAutomation
+Prerequisite :
 
-# TO genrate allura file  - This Command should run Where we have .sln file
+1) Nunit Framework
+2) Serilog 
+3) Allure.Nunit 
+4) NUnit.testAnalyzers
+5) Nunit3.TestAdapter
 
-# dotnet test --logger "trx;LogFileName=TestResults.trx"
+Build and Run a test cases: 
 
-# To Generate Allura Report - This Command should run above one level of the Allura report folder
-# allure generate allure-results --clean -o allure-report
+1)  Goto Build Folder 
+2)  run Build_PipeLine.bat File
 
-# TO Start seeing Report 
-# allure open allure-report
-
-# To Run Only Category Type Test
-# dotnet test --logger "trx;LogFileName=TestResults.trx" --filter "Category=Sanity"
