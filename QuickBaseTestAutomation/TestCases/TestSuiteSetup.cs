@@ -2,6 +2,7 @@
 
 #region MS Directives
 using Microsoft.Extensions.Configuration;
+using QuickBase.TestAutomationCore;
 using Serilog;
 #endregion
 
@@ -16,7 +17,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@"TestConfiguration\\TestFrameworkSettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile(Constants.TestFrameworkSettings, optional: false, reloadOnChange: true);
 
 
             Log.Logger = new LoggerConfiguration()

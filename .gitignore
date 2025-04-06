@@ -9,3 +9,8 @@
 /QuickBaseTestAutomation/obj
 /QuickBaseTestAutomation/TestResults/TestResults.trx
 /.vs/ProjectEvaluation
+/TestResultMailer/bin/Release/net8.0
+/TestResultMailer/obj
+/QuickBase.TestAutomation.Core/bin/Release/net8.0
+/QuickBaseTestAutomation/allure-report
+/QuickBaseTestAutomation/bin/Release/net8.0

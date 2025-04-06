@@ -38,7 +38,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@"TestConfiguration\\TestFrameworkSettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile(Constants.TestFrameworkSettings, optional: false, reloadOnChange: true);
 
             _configuration = builder.Build();
         }
@@ -75,9 +75,8 @@ namespace QuickBase.TestAutomationSuite.TestCases
             try
             {
                 //Arrange
-                var data = JsonFileReader.GetJsonFile("TestData\\TC_001_Successful_Request_DeleteRecord.json");
+                var data = JsonFileReader.GetJsonFile("TestData\\DeleteRecords\\TC_001_Successful_Request_DeleteRecord.json");
 
-                //JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\TC_001_Successful_Response.json");
 
                 if (_headers != null && _configuration != null)
                 {
@@ -87,7 +86,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                     //Act
                     client = new RestClientWrapper(_configuration);
 
-                    var queryData = JsonFileReader.GetJsonFile("TestData\\TC_001_Successful_request_with_valid_user_token_QueryData.json");
+                    var queryData = JsonFileReader.GetJsonFile("TestData\\DeleteRecords\\TC_001_Successful_DeleteRequest_with_valid_user_token_QueryData.json");
 
                     // Query From Db
                     var queryResponse = client.PostAsync("query", queryData, _headers).GetAwaiter().GetResult();
@@ -179,7 +178,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                 // Arrange
                 var builder = new ConfigurationBuilder()
                    .SetBasePath(Directory.GetCurrentDirectory())
-                   .AddJsonFile(@"TestData\TC_003_404_NotFound_WrongURL.json", optional: false, reloadOnChange: true);
+                   .AddJsonFile(@"TestData\ErrorResponse\TC_003_404_NotFound_WrongURL.json", optional: false, reloadOnChange: true);
 
                 var result = TestCaseUtility.NotFound_WrongURL(_headers, client, builder, HttpMethod.Delete);
 
@@ -215,7 +214,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         }
 
 
-        [TestCase("TestData\\TC_005_400_BadRequest_Without_Required_FromKey_Delete.json", "Required_From_Missed")]
+        [TestCase("TestData\\DeleteRecords\\TC_005_400_BadRequest_Without_Required_FromKey_Delete.json", "Required_From_Missed")]
         public void TC_005_400_BadRequest(string path, string key)
         {
             try
@@ -253,7 +252,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                 //Arrange
                 var builder = new ConfigurationBuilder()
                      .SetBasePath(Directory.GetCurrentDirectory())
-                     .AddJsonFile(@"TestData\TC_006_408_RequestTimeout.json", optional: false, reloadOnChange: true);
+                     .AddJsonFile(@"TestData\ErrorResponse\TC_006_408_RequestTimeout.json", optional: false, reloadOnChange: true);
                 client = new RestClientWrapper(builder.Build());
 
                 var result = TestCaseUtility.RequestTimeOut(_headers, client, builder, HttpMethod.Delete);

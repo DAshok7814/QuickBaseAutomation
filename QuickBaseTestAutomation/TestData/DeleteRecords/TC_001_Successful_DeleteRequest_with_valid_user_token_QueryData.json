@@ -1,0 +1,10 @@
+{
+  "from": "buzef6nza",
+  "select": [
+    16,
+    27,
+    97
+  ],
+  "where": "{16.CT.'Project Automation test1'}"
+
+}

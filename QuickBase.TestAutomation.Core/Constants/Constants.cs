@@ -38,22 +38,22 @@
         /// <summary>
         /// ErrorResponseDetailsJson
         /// </summary>
-        public static string ErrorResponseDetailsJson = "TestData\\ErrorResponseDetails.json";
+        public static string ErrorResponseDetailsJson = "TestData\\ErrorResponse\\ErrorResponseDetails.json";
 
         /// <summary>
         /// DataForProjectTableJson
         /// </summary>
-        public static string DataForProjectTableJson = "TestData\\TC_DataForProjectTable.json";
+        public static string DataForProjectTableJson = "TestData\\Common\\TC_DataForProjectTable.json";
 
         /// <summary>
         /// DataForProjectTableJson
         /// </summary>
-        public static string TC_008_401_Unauthorized_WrongTableName = "TestData\\TC_008_401_Unauthorized_WrongTableName.json";
+        public static string TC_008_401_Unauthorized_WrongTableName = "TestData\\AddRecords\\TC_008_401_Unauthorized_WrongTableName.json";
 
         /// <summary>
         /// DataForProjectTableJson
         /// </summary>
-        public static string TC_DataForProjectTable_Delete = "TestData\\TC_DataForProjectTable_Delete.json";
+        public static string TC_DataForProjectTable_Delete = "TestData\\DeleteRecords\\TC_DataForProjectTable_Delete.json";
 
         
         /// <summary>
@@ -81,9 +81,20 @@
         /// </summary>
         public static string Forbidden_Error = "Forbidden_Error";
 
-       
-
+        /// <summary>
+        /// Forbidden_Error
+        /// </summary>
+        public static string TestFrameworkSettings = @"TestConfiguration\\TestFrameworkSettings.json";
         
+        /// <summary>
+        /// Forbidden_Error
+        /// </summary>
+        public static string TrxFilePath = @"D:\Learning\DotNet\QB\QuickBaseAutomation\QuickBaseTestAutomation\TestResults\TestResults.trx";
+
+        /// <summary>
+        /// Forbidden_Error
+        /// </summary>
+        public static string HtmlReportPath = @"D:\Learning\DotNet\QB\QuickBaseAutomation\QuickBaseTestAutomation\TestResults\TestResults.html";
 
     }
 }

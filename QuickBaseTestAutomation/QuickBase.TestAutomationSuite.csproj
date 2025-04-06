@@ -17,6 +17,7 @@
     <PackageReference Include="NUnit" Version="3.14.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.9.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="ReportUnit" Version="1.2.1" />
     <PackageReference Include="Serilog" Version="4.2.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
@@ -34,61 +35,67 @@
     <None Update="TestConfiguration\TestFrameworkSettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_Successful_request_with_valid_user_token_and_data.json">
+    <None Update="TestData\AddRecords\TC_001_Successful_request_with_valid_user_token_and_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_200_UpdateRecordsToTable_QueryData.json">
+    <None Update="TestData\DeleteRecords\TC_001_Successful_DeleteRequest_with_valid_user_token_QueryData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_200_UpdateRecordsToTable_QueryData_Response.json">
+    <None Update="TestData\UpdateRecords\TC_001_200_UpdateRecordsToTable_QueryData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_Successful_Response.json">
+    <None Update="TestData\UpdateRecords\TC_001_200_UpdateRecordsToTable_QueryData_Response.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_008_DataValidation_Data_CaseSesitive.json">
+    <None Update="TestData\AddRecords\TC_001_Successful_Response.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_008_DataValidation_To_CaseSesitive.json">
+    <None Update="TestData\AddRecords\TC_008_DataValidation_Data_CaseSesitive.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_008_DataValidation_Data_String.json">
+    <None Update="TestData\AddRecords\TC_008_DataValidation_To_CaseSesitive.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_005_400_BadRequest_Without_Required_FromKey_Delete.json">
+    <None Update="TestData\AddRecords\TC_008_DataValidation_Data_String.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_006_408_RequestTimeout.json">
+    <None Update="TestData\DeleteRecords\TC_005_400_BadRequest_Without_Required_FromKey_Delete.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_005_400_BadRequest_Without_Required_DataKey.json">
+    <None Update="TestData\ErrorResponse\TC_006_408_RequestTimeout.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_005_400_BadRequest_Without_Required_TableKey.json">
+    <None Update="TestData\ErrorResponse\TC_005_400_BadRequest_Without_Required_DataKey.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\ErrorResponseDetails.json">
+    <None Update="TestData\ErrorResponse\TC_005_400_BadRequest_Without_Required_TableKey.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_Successful_Request_DeleteRecord.json">
+    <None Update="TestData\ErrorResponse\ErrorResponseDetails.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_008_401_Unauthorized_WrongTableName.json">
+    <None Update="TestData\DeleteRecords\TC_001_Successful_Request_DeleteRecord.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_DataForProjectTable_Delete.json">
+    <None Update="TestData\AddRecords\TC_008_401_Unauthorized_WrongTableName.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_DataForProjectTable.json">
+    <None Update="TestData\DeleteRecords\TC_DataForProjectTable_Delete.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_Successful_request_with_valid_user_token_QueryData.json">
+    <None Update="TestData\Common\TC_DataForProjectTable.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_001_200_UpdateRecordsToTable.json">
+    <None Update="TestData\AddRecords\TC_001_Successful_request_with_valid_user_token_QueryData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\TC_003_404_NotFound_WrongURL.json">
+    <None Update="TestData\UpdateRecords\TC_001_200_UpdateRecordsToTable.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\ErrorResponse\TC_003_404_NotFound_WrongURL.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\UpdateRecords\TC_001_Successful_request_with_valid_user_token_and_data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

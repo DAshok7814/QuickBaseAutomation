@@ -41,7 +41,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@"TestConfiguration\\TestFrameworkSettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile(Constants.TestFrameworkSettings, optional: false, reloadOnChange: true);
 
             _configuration = builder.Build();
         }
@@ -78,9 +78,9 @@ namespace QuickBase.TestAutomationSuite.TestCases
             try
             {
                 //Arrange
-                var data = JsonFileReader.GetJsonFile("TestData\\TC_001_Successful_request_with_valid_user_token_and_data.json");
+                var data = JsonFileReader.GetJsonFile("TestData\\UpdateRecords\\TC_001_Successful_request_with_valid_user_token_and_data.json");
 
-                JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\TC_001_200_UpdateRecordsToTable_QueryData_Response.json");
+                JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\UpdateRecords\\TC_001_200_UpdateRecordsToTable_QueryData_Response.json");
 
                 if (_headers != null && _configuration != null)
                 {
@@ -92,7 +92,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
 
                     //Act
                     client = new RestClientWrapper(_configuration);
-                    var updateData = JsonFileReader.GetJsonFile("TestData\\TC_001_200_UpdateRecordsToTable.json");
+                    var updateData = JsonFileReader.GetJsonFile("TestData\\UpdateRecords\\TC_001_200_UpdateRecordsToTable.json");
                     JObject reqString = QBUtility.ConvertStringToJobject(updateData);
 
                     //Updating Record value to Update in Project Table
@@ -109,7 +109,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                     // Verify updated record is correct or not 
 
                     client = new RestClientWrapper(_configuration);
-                    var queryData = JsonFileReader.GetJsonFile("TestData\\TC_001_200_UpdateRecordsToTable_QueryData.json");
+                    var queryData = JsonFileReader.GetJsonFile("TestData\\UpdateRecords\\TC_001_200_UpdateRecordsToTable_QueryData.json");
 
                     JObject queryReqString = QBUtility.ConvertStringToJobject(queryData);
 

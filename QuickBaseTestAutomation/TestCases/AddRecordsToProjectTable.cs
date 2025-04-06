@@ -41,7 +41,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(@"TestConfiguration\\TestFrameworkSettings.json", optional: false, reloadOnChange: true);
+                .AddJsonFile(Constants.TestFrameworkSettings, optional: false, reloadOnChange: true);
 
             _configuration = builder.Build();
         }
@@ -78,9 +78,9 @@ namespace QuickBase.TestAutomationSuite.TestCases
             try
             {
                 //Arrange
-                var data = JsonFileReader.GetJsonFile("TestData\\TC_001_Successful_request_with_valid_user_token_and_data.json");
+                var data = JsonFileReader.GetJsonFile("TestData\\AddRecords\\TC_001_Successful_request_with_valid_user_token_and_data.json");
 
-                JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\TC_001_Successful_Response.json");
+                JObject expectedObject = QBUtility.ReadJsonFileAndConvertJobject("TestData\\AddRecords\\TC_001_Successful_Response.json");
 
                 if (_headers != null && _configuration != null)
                 {
@@ -89,7 +89,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
 
                     //Act
                     client = new RestClientWrapper(_configuration);
-                    var queryData = JsonFileReader.GetJsonFile("TestData\\TC_001_Successful_request_with_valid_user_token_QueryData.json");
+                    var queryData = JsonFileReader.GetJsonFile("TestData\\AddRecords\\TC_001_Successful_request_with_valid_user_token_QueryData.json");
 
                     // Query From Db
                     var queryResponse = client.PostAsync("query", queryData, _headers).GetAwaiter().GetResult();
@@ -183,7 +183,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                 // Arrange
                 var builder = new ConfigurationBuilder()
                    .SetBasePath(Directory.GetCurrentDirectory())
-                   .AddJsonFile(@"TestData\TC_003_404_NotFound_WrongURL.json", optional: false, reloadOnChange: true);
+                   .AddJsonFile(@"TestData\ErrorResponse\TC_003_404_NotFound_WrongURL.json", optional: false, reloadOnChange: true);
 
                 var result = TestCaseUtility.NotFound_WrongURL(_headers, client, builder, HttpMethod.Post);
 
@@ -219,8 +219,8 @@ namespace QuickBase.TestAutomationSuite.TestCases
         }
 
 
-        [TestCase("TestData\\TC_005_400_BadRequest_Without_Required_DataKey.json", "Required_Datakey_Missed")]
-        [TestCase("TestData\\TC_005_400_BadRequest_Without_Required_TableKey.json", "Required_Tokey_Missed")]
+        [TestCase("TestData\\ErrorResponse\\TC_005_400_BadRequest_Without_Required_DataKey.json", "Required_Datakey_Missed")]
+        [TestCase("TestData\\ErrorResponse\\TC_005_400_BadRequest_Without_Required_TableKey.json", "Required_Tokey_Missed")]
         public void TC_005_400_BadRequest(string path, string key)
         {
             try
@@ -258,7 +258,7 @@ namespace QuickBase.TestAutomationSuite.TestCases
                 //Arrange
                 var builder = new ConfigurationBuilder()
                      .SetBasePath(Directory.GetCurrentDirectory())
-                     .AddJsonFile(@"TestData\TC_006_408_RequestTimeout.json", optional: false, reloadOnChange: true);
+                     .AddJsonFile(@"TestData\ErrorResponse\TC_006_408_RequestTimeout.json", optional: false, reloadOnChange: true);
                 client = new RestClientWrapper(builder.Build());
 
                 var result = TestCaseUtility.RequestTimeOut(_headers, client, builder, HttpMethod.Post);
@@ -298,9 +298,9 @@ namespace QuickBase.TestAutomationSuite.TestCases
             }
         }
 
-        [TestCase("TestData\\TC_008_DataValidation_Data_CaseSesitive.json", "Required_Datakey_Missed")]
-        [TestCase("TestData\\TC_008_DataValidation_To_CaseSesitive.json", "Required_Tokey_Missed")]
-        [TestCase("TestData\\TC_008_DataValidation_Data_String.json", "Data_ShouldBeArray")]
+        [TestCase("TestData\\AddRecords\\TC_008_DataValidation_Data_CaseSesitive.json", "Required_Datakey_Missed")]
+        [TestCase("TestData\\AddRecords\\TC_008_DataValidation_To_CaseSesitive.json", "Required_Tokey_Missed")]
+        [TestCase("TestData\\AddRecords\\TC_008_DataValidation_Data_String.json", "Data_ShouldBeArray")]
         public void TC_008_DataValidation(string path, string key)
         {
             try
