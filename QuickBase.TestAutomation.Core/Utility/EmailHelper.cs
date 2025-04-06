@@ -18,8 +18,8 @@ namespace QuickBase.TestAutomationCore.Utility
         /// </summary>
         public static void SendEmailWithReport()
         {
-            var fromAddress = new MailAddress("ashokdinakaran7814@gmail.com");
-            var toAddress = new MailAddress("ashokdinakaran7814@gmail.com");
+            var fromAddress = new MailAddress("automationquickbase@gmail.com");
+            var toAddress = new MailAddress("automationquickbase@gmail.com");
             const string subject = "NUnit Test Results";
 
             var smtp = new SmtpClient
@@ -29,7 +29,7 @@ namespace QuickBase.TestAutomationCore.Utility
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, "ijyp oksx ienl plra")
+                Credentials = new NetworkCredential(fromAddress.Address, "gouh gfye hmiq fnxj")
             };
             Attachment attachment = new Attachment(Constants.HtmlReportPath);
 
